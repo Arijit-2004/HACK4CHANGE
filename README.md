@@ -28,3 +28,6 @@ EduMadeEasy is an AI-powered website designed to assist marginalized students in
 
 ## Deployment link
 https://edumadeeasy.netlify.app/
+![image](https://github.com/user-attachments/assets/5abfb435-4e44-4885-b0d7-4d0ad291d4ac)
+
+
