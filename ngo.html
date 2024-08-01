@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduMadeEasy</title>
+    <link rel="stylesheet" href="../static/ngostyles.css">
+    <style>
+        /* Modal Styles */
+        .modal {
+            display: none; /* Hidden by default */
+            position: fixed; /* Stay in place */
+            z-index: 1000; /* Sit on top */
+            left: 0;
+            top: 0;
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            overflow: auto; /* Enable scroll if needed */
+            background-color: rgb(0,0,0); /* Fallback color */
+            background-color: rgba(0,0,0,0.8); /* Black w/ opacity */
+        }
+        .modal-content {
+            margin: auto;
+            display: block;
+            width: 80%;
+            max-width: 700px;
+        }
+        .modal-content {
+            width: 100%;
+            height: auto;
+        }
+        .close {
+            position: absolute;
+            top: 10px;
+            right: 25px;
+            color: #fff;
+            font-size: 35px;
+            font-weight: bold;
+        }
+        .close:hover,
+        .close:focus {
+            color: #bbb;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        /* View More Button */
+        .view-more-container {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .view-more-btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background: #007bff;
+            color: #fff;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .view-more-btn:hover {
+            background: #0056b3;
+        }
+        .ngo-card.hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html" class="logo">EduMadeEasy</a>
+            <ul>
+                <li><a href="scholarships.html ">Scholarships</a></li>
+                <li><a href="internships.html">Internships</a></li>
+                <li><a href="index.html#contact-us"><i class="fas fa-envelope"></i> Contact Us</a></li>
+                <li><a href="#" id="openLoginRegister">Login/Register</a></li>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>Connect with the Right NGOs</h1>
+        <p>Find NGOs that support and align with you.</p>
+        <div class="hero-buttons">
+            <a href="#ngos-card" class="btn">View NGOs</a>
+            <a href="index.html#contact-us" class="btn">Contact Us</a>
+        </div>
+    </section>
+
+    <section class="ngos">
+        <h2>Our Partner NGOs</h2>
+        <div class="ngo-container">
+            <!-- Existing NGO Cards -->
+            <div class="ngo-card">
+                <img src="images/smile.jpeg" alt="NGO Image 1" onclick="openModal('images/smile.jpeg')">
+                <div class="ngo-card-content">
+                    <h3><a href="https://www.smilefoundationindia.org/" target="_blank">Smile Foundation</a></h3>
+                    <p>Smile Foundation empowers underprivileged children and youth through education and skill development. It aims towards a better future for marginalized communities.</p>
+                    <div class="ngo-buttons">
+                        <a href="https://www.smilefoundationindia.org/our-story/" class="btn">About</a>
+                        <a href="https://www.smilefoundationindia.org/education/" class="btn">Programs</a>
+                        <a href="https://www.smilefoundationindia.org/contact-us/" class="btn">Contact Us</a>
+                    </div>
+                </div>
+            </div>
+            <div class="ngo-card">
+                <img src="images/care.png" alt="NGO Image 2" onclick="openModal('images/care.png')">
+                <div class="ngo-card-content">
+                    <h3><a href="http://www.carefoundation.in/" target="_blank">Care Foundation</a></h3>
+                    <p>CARE Foundation provides quality education to underprivileged children. It improves learning outcomes in government schools.</p>
+                    <div class="ngo-buttons">
+                        <a href="http://www.carefoundation.in/about.html" class="btn">About</a>
+                        <a href="http://www.carefoundation.in/ourwork.html" class="btn">Programs</a>
+                        <a href="http://www.carefoundation.in/contact.html" class="btn">Contact Us</a>
+                    </div>
+                </div>
+            </div>
+            <div class="ngo-card">
+                <img src="images/cry.png" alt="NGO Image 3" onclick="openModal('images/cry.png')">
+                <div class="ngo-card-content">
+                    <h3><a href="https://www.cry.org/" target="_blank">Child Rights and You (CRY)</a></h3>
+                    <p>CRY is a top NGO for children's rights. It empowers underprivileged children with happy and healthier childhoods.</p>
+                    <div class="ngo-buttons">
+                        <a href="https://www.cry.org/about-cry/" class="btn">About</a>
+                        <a href="https://www.cry.org/our-work/children-education/" class="btn">Programs</a>
+                        <a href="https://www.cry.org/contact/" class="btn">Contact Us</a>
+                    </div>
+                </div>
+            </div>
+            <!-- New NGO Cards (Initially hidden) -->
+            <div class="ngo-card hidden">
+                <img src="images/giveindia.png" alt="NGO Image 4" onclick="openModal('images/giveindia.png')">
+                <div class="ngo-card-content">
+                    <h3><a href="https://www.giveindia.org/" target="_blank">GiveIndia Foundation</a></h3>
+                    <p>Give India Foundation supports causes like education, healthcare for the underprivileged. It connects donors with trusted NGOs to create a positive impact.</p>
+                    <div class="ngo-buttons">
+                        <a href="https://www.giveindia.org/aboutus" class="btn">About</a>
+                        <a href="https://give.do/missions/no-child-orphan" class="btn">Programs</a>
+                        <a href="https://support.give.do/support/home?" class="btn">Contact Us</a>
+                    </div>
+                </div>
+            </div>
+            <div class="ngo-card hidden">
+                <img src="images/helpageindia.jpeg" alt="NGO Image 5" onclick="openModal('images/helpageindia.jpeg')">
+                <div class="ngo-card-content">
+                    <h3><a href="https://www.helpageindia.org/" target="_blank">HelpAge India</a></h3>
+                    <p>HelpAge India works towards improving the lives of elderly citizens, providing them with healthcare, economic security. It also supports disaster relief across the country.</p>
+                    <div class="ngo-buttons">
+                        <a href="https://www.helpageindia.org/aboutus/" class="btn">About</a>
+                        <a href="https://www.helpageindia.org/our-work/welfare-development/disaster-management/" class="btn">Programs</a>
+                        <a href="https://www.helpageindia.org/contact-us/" class="btn">Contact Us</a>
+                    </div>
+                </div>
+            </div>
+            <div class="ngo-card hidden">
+                <img src="images/akpat.jpg" alt="NGO Image 6" onclick="openModal('images/akpat.jpg')">
+                <div class="ngo-card-content">
+                    <h3><a href="https://www.akshayapatra.org/" target="_blank">Akshaya Patra Foundation</a></h3>
+                    <p>Akshaya Patra Foundation provides mid-day meals to millions of Indian school children, promoting nutrition. It aims to eradicate hunger and support education.</p>
+                    <div class="ngo-buttons">
+                        <a href="https://www.akshayapatra.org/about-us" class="btn">About</a>
+                        <a href="https://www.akshayapatra.org/our-work" class="btn">Programs</a>
+                        <a href="https://www.akshayapatra.org/contact-us" class="btn">Contact Us</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- View More Button -->
+        <div class="view-more-container">
+            <button class="view-more-btn" onclick="showMore()">View More</button>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section about">
+                <h3>About Us</h3>
+                <p>EduMadeEasy is dedicated to helping students find the right scholarships and internships to further their education and career. Our mission is to connect students with valuable opportunities to support their academic and professional growth.</p>
+            </div>
+            <div class="footer-section contact">
+                <h3>Contact Us</h3>
+                <p>Email: <a href="mailto:youremail@example.com">youremail@example.com</a></p>
+            </div>
+            <div class="footer-section social-media">
+                <h3>Follow Us</h3>
+                <a href="https://twitter.com/yourtwitter" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.linkedin.com/in/yourlinkedin/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="https://www.instagram.com/yourinstagram/" target="_blank"><i class="fab fa-instagram"></i></a>
+            </div>
+            <div class="footer-section newsletter">
+                <h3>Newsletter</h3>
+                <p>Subscribe to our newsletter to get the latest updates on scholarships, internships, and more.</p>
+                <form action="#">
+                    <input type="email" placeholder="Your email address" required>
+                    <button type="submit">Subscribe</button>
+                </form>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2024 EduMadeEasy. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Modal for Image View -->
+    <div id="imageModal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img class="modal-content" id="modalImage">
+    </div>
+
+    <script>
+        function openModal(imgSrc) {
+            var modal = document.getElementById('imageModal');
+            var modalImg = document.getElementById('modalImage');
+            modal.style.display = "block";
+            modalImg.src = imgSrc;
+        }
+
+        function closeModal() {
+            var modal = document.getElementById('imageModal');
+            modal.style.display = "none";
+        }
+
+        function showMore() {
+            var hiddenCards = document.querySelectorAll('.ngo-card.hidden');
+            hiddenCards.forEach(function(card) {
+                card.classList.remove('hidden');
+            });
+            document.querySelector('.view-more-container').style.display = 'none'; // Hide the View More button
+        }
+    </script>
+</body>
+</html>

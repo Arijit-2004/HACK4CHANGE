@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scholarships - EduMadeEasy</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to right, #e0e0e0, #f4f4f4); /* Smooth gradient background */
+        }
+
+        header {
+            background: linear-gradient(to right, #a2c2e2, #b4e1f4); /* Smooth gradient header */
+            color: #fff;
+            padding: 10px 20px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-decoration: none;
+            color: #fff;
+        }
+
+        ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+        
+        ul li {
+            margin-left: 20px;
+        }
+
+        ul li a {
+            text-decoration: none;
+            color: #fff;
+            font-size: 1rem;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        ul li a:hover {
+            color: #007bff;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(to right, #007bff, #00c6ff); /* Smooth gradient background */
+            color: #fff;
+            padding: 60px 20px;
+            text-align: center;
+            border-radius: 0 0 15px 15px; /* Rounded corners at the bottom */
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+
+        /* Scholarship Section */
+        .scholarships {
+            padding: 60px 20px;
+            background: linear-gradient(to right, #f4f4f4, #e0e0e0); /* Seamless gradient background */
+        }
+
+        .scholarships h2 {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 2rem;
+            color: #333;
+        }
+
+        .scholarship-card {
+            background: linear-gradient(to right, #fff, #f9f9f9); /* Gradient background for cards */
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            overflow: hidden;
+            transition: transform 0.3s;
+        }
+
+        .scholarship-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .scholarship-card img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+        }
+
+        .scholarship-card-content {
+            padding: 20px;
+        }
+
+        .scholarship-card-content h3 {
+            margin-top: 0;
+            font-size: 1.5rem;
+            color: #007bff;
+        }
+
+        .scholarship-card-content p {
+            font-size: 1.1rem;
+            color: #333;
+        }
+
+        .scholarship-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px; /* Add gap between buttons */
+            justify-content: space-between; /* Distribute buttons evenly */
+            margin-top: 15px;
+        }
+
+        .btn {
+            padding: 15px 30px; /* Increase padding for larger buttons */
+            border: none;
+            border-radius: 5px;
+            color: #fff;
+            background: #007bff;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem; /* Increase font size for uniformity */
+            transition: background-color 0.3s;
+            flex: 1; /* Ensure buttons take equal space */
+            text-align: center; /* Center align the text */
+        }
+
+        .btn:hover {
+            background: #0056b3;
+        }
+
+        /* View More Button */
+        .view-more-container {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .view-more-btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background: #007bff;
+            color: #fff;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .view-more-btn:hover {
+            background: #0056b3;
+        }
+        .ngo-card.hidden {
+            display: none;
+        }
+        /* Footer Styles */
+        footer {
+            background: linear-gradient(to right, #4a4a4a, #1a1a1a); /* Smooth gradient background for footer */
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .footer-content .footer-section {
+            margin-bottom: 20px;
+        }
+
+        .footer-content .footer-section h3 {
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+
+        .footer-content .footer-section p {
+            margin: 5px 0;
+        }
+
+        .footer-content .social-media {
+            margin-top: 10px;
+        }
+
+        .footer-content .social-media a {
+            color: #fff;
+            margin: 0 10px;
+            font-size: 1.5rem;
+            transition: color 0.3s;
+        }
+
+        .footer-content .social-media a:hover {
+            color: #007bff;
+        }
+
+        .footer-content .newsletter form {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .footer-content .newsletter input[type="email"] {
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            margin-right: 10px;
+            width: 200px;
+        }
+
+        .footer-content .newsletter button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background: #007bff;
+            color: #fff;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .footer-content .newsletter button:hover {
+            background: #0056b3;
+        }
+
+        .copyright {
+            margin-top: 20px;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html" class="logo">EduMadeEasy</a>
+            <ul>
+                <li><a href="internships.html">Internships</a></li>
+                <li><a href="ngo.html">NGOs</a></li>
+                <li><a href="index.html#contact-us"><i class="fas fa-envelope"></i> Contact Us</a></li>
+                <li><a href="#" id="openLoginRegister">Login/Register</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Find Your Ideal Scholarship</h1>
+            <p>Explore a wide range of scholarships available for you and take a step closer to achieving your educational goals.</p>
+            <div class="hero-buttons">
+                <a href="#scholarship-list" class="btn">View Scholarships</a>
+                <a href="index.html#contact-us" class="btn">Contact Us</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="scholarships" id="scholarship-list">
+        <div class="container">
+            <h2>Available Scholarships</h2>
+            <div class="scholarship-card">
+                <img src="./images/scholar1.png" alt="Scholarship 1">
+                <div class="scholarship-card-content">
+                    <h3>Kotak Kanya Scholarship 2024-25</h3>
+                    <p>Kotak Kanya Scholarship is a collaborative CSR Project of Kotak Mahindra Group companies and Kotak Education Foundation to promote education and livelihood among economically disadvantaged sections of society. This scholarship aims to offer financial assistance to meritorious girl students from low-income families to empower them to pursue higher studies in professional education after Class 12.</p>
+                    <div class="scholarship-buttons">
+                        <a href="https://www.buddy4study.com/page/kotak-kanya-scholarship#about" class="btn">About Program</a>
+                        <a href="https://www.buddy4study.com/page/kotak-kanya-scholarship#scholarships" class="btn">Scholarships</a>
+                        <a href="https://www.buddy4study.com/page/kotak-kanya-scholarship#faqs" class="btn">FAQs</a>
+                        <a href="https://www.buddy4study.com/page/kotak-kanya-scholarship#contactdetails" class="btn">Contact Details</a>
+                        <a href="https://www.buddy4study.com/page/kotak-kanya-scholarship#singleScApply" class="btn">Apply Now</a>
+                    </div>
+                </div>
+            </div>
+            <div class="scholarship-card">
+                <img src="./images/scholar2.png" alt="Scholarship 2">
+                <div class="scholarship-card-content">
+                    <h3>Bharti Airtel Scholarship Program 2024-25</h3>
+                    <p>Bharti Airtel Foundation aims to support deserving students from diverse socio-economic backgrounds, with a focus on girl students, to become future technology leaders. To achieve this goal, a merit-cum-means based scholarship program has been designed for students enrolled in technology-based engineering undergraduate (UG) courses and 5-year integrated programs (as per the eligibility criteria) in the top 50 NIRF Engineering institutes. The students receiving the scholarship shall be called Bharti Scholars.</p>
+                    <div class="scholarship-buttons">
+                        <a href="https://www.buddy4study.com/page/bharti-airtel-scholarship#about" class="btn">About Program</a>
+                        <a href="https://www.buddy4study.com/page/bharti-airtel-scholarship#scholarships" class="btn">Scholarships</a>
+                        <a href="https://www.buddy4study.com/page/bharti-airtel-scholarship#faqs" class="btn">FAQs</a>
+                        <a href="https://www.buddy4study.com/page/bharti-airtel-scholarship#contactdetails" class="btn">Contact Details</a>
+                        <a href="https://www.buddy4study.com/page/bharti-airtel-scholarship#singleScApply" class="btn">Apply Now</a>
+                    </div>
+                </div>
+            </div>
+            <div class="scholarship-card">
+                <img src="./images/scholar3.png" alt="Scholarship 3">
+                <div class="scholarship-card-content">
+                    <h3>HDFC Bank Parivartan's ECSS Programme 2024-25</h3>
+                    <p>HDFC Bank Parivartan's ECSS Programme 2024-25 is an initiative of HDFC Bank that aims to support meritorious and needy students belonging to underprivileged sections of society. The scholarship programme is meant for school students from Classes 1 to 12 and those pursuing diploma, ITI, polytechnic, UG, and PG (general and professional) programmes. Under the ECSS programme, the students who are unable to bear the cost of education due to personal/family crises or any other financial problems and are at risk of dropping out are provided with monetary assistance of up to INR 75,000 for their studies.</p>
+                    <div class="scholarship-buttons">
+                        <a href="https://www.buddy4study.com/page/hdfc-bank-parivartans-ecss-programme#about" class="btn">About Program</a>
+                        <a href="https://www.buddy4study.com/page/hdfc-bank-parivartans-ecss-programme#scholarships" class="btn">Scholarships</a>
+                        <a href="https://www.buddy4study.com/page/hdfc-bank-parivartans-ecss-programme#faqs" class="btn">FAQs</a>
+                        <a href="https://www.buddy4study.com/page/hdfc-bank-parivartans-ecss-programme#contactdetails" class="btn">Contact Details</a>
+                        <a href="https://www.buddy4study.com/page/hdfc-bank-parivartans-ecss-programme#singleScApply" class="btn">Apply Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="ngo-card hidden">   
+    <div class="scholarship-card">
+        <img src="./images/idfc.jpg" alt="Scholarship 2">
+        <div class="scholarship-card-content">
+            <h3>IDFC FIRST Bank MBA Scholarship 2024-26</h3>
+            <p>IDFC FIRST Bank MBA Scholarship is a need-based scholarship program by IDFC FIRST Bank that financially supports students with family incomes of less than INR 6 lakh per annum. The purpose of this scholarship is to make postgraduate studies in business management accessible to meritorious students who are unable to pursue higher studies due to financial constraints. </p>
+            <div class="scholarship-buttons">
+                <a href="https://www.buddy4study.com/page/idfc-first-bank-mba-scholarship#about" class="btn">About Program</a>
+                <a href="https://www.buddy4study.com/page/idfc-first-bank-mba-scholarship#scholarships" class="btn">Scholarships</a>
+                <a href="https://www.buddy4study.com/page/idfc-first-bank-mba-scholarship#faqs" class="btn">FAQs</a>
+                <a href="https://www.buddy4study.com/page/idfc-first-bank-mba-scholarship#contactdetails" class="btn">Contact Details</a>
+                <a href="https://www.buddy4study.com/page/idfc-first-bank-mba-scholarship#singleScApply" class="btn">Apply Now</a>
+            </div>
+        </div>
+    </div>
+</div> 
+
+<div class="ngo-card hidden">   
+    <div class="scholarship-card">
+        <img src="./images/lifegood.jpg" alt="Scholarship 2">
+        <div class="scholarship-card-content">
+            <h3>'LIFE’S GOOD' Scholarship Program 2024</h3>
+            <p>'LIFE’S GOOD' Scholarship Program 2024 is a CSR initiative by LG Electronics India Private Limited to provide financial assistance to meritorious students from economically weaker backgrounds. Under this scholarship program, students pursuing their undergraduate or postgraduate courses at select institutes/colleges can receive financial aid for one year to support their educational journey. </p>
+            <div class="scholarship-buttons">
+                <a href="https://www.buddy4study.com/page/life-s-good-scholarship-program#about" class="btn">About Program</a>
+                <a href="https://www.buddy4study.com/page/life-s-good-scholarship-program#scholarships" class="btn">Scholarships</a>
+                <a href="https://www.buddy4study.com/page/life-s-good-scholarship-program#faqs" class="btn">FAQs</a>
+                <a href="https://www.buddy4study.com/page/life-s-good-scholarship-program#contactdetails" class="btn">Contact Details</a>
+                <a href="https://www.buddy4study.com/page/life-s-good-scholarship-program#singleScApply" class="btn">Apply Now</a>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <div class="ngo-card hidden">  
+
+    <div class="scholarship-card">
+        <img src="./images/bluestar.jpg" alt="Scholarship 2">
+        <div class="scholarship-card-content">
+            <h3>Mohan T Advani Centennial Scholarship Programme</h3>
+            <p>The Mohan T Advani Centennial Scholarship Programme, a flagship initiative of Blue Star Foundation, aims to transform the lives of underprivileged students seeking financial assistance for their undergraduate and diploma courses in the fields of engineering and architecture.  Under this program, first and second-year students enrolled in degree or diploma programmes in architecture and engineering at select private or government colleges across India can receive a scholarship of up to INR 75,000 to support their educational pursuits.</p>
+            <div class="scholarship-buttons">
+                <a href="https://www.buddy4study.com/page/mohan-t-advani-centennial-scholarship-programme#about" class="btn">About Program</a>
+                <a href="https://www.buddy4study.com/page/mohan-t-advani-centennial-scholarship-programme#scholarships" class="btn">Scholarships</a>
+                <a href="https://www.buddy4study.com/page/mohan-t-advani-centennial-scholarship-programme#faqs" class="btn">FAQs</a>
+                <a href="https://www.buddy4study.com/page/mohan-t-advani-centennial-scholarship-programme#contactdetails" class="btn">Contact Details</a>
+                <a href="https://www.buddy4study.com/page/mohan-t-advani-centennial-scholarship-programme#singleScApplyt" class="btn">Apply Now</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="view-more-container">
+    <button class="view-more-btn" onclick="showMore()">View More</button>
+</div>
+</section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section about">
+                <h3>About Us</h3>
+                <p>EduMadeEasy is dedicated to helping students find the right scholarships and internships to further their education and career. Our mission is to connect students with valuable opportunities to support their academic and professional growth.</p>
+            </div>
+            <div class="footer-section contact">
+                <h3>Contact Us</h3>
+                <p>Email: <a href="mailto:youremail@example.com">youremail@example.com</a></p>
+            </div>
+            <div class="footer-section social-media">
+                <h3>Follow Us</h3>
+                <a href="https://twitter.com/yourtwitter" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.linkedin.com/in/yourlinkedin/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="https://www.instagram.com/yourinstagram/" target="_blank"><i class="fab fa-instagram"></i></a>
+            </div>
+            <div class="footer-section newsletter">
+                <h3>Newsletter</h3>
+                <p>Subscribe to our newsletter to get the latest updates on scholarships, internships, and more.</p>
+                <form action="#">
+                    <input type="email" placeholder="Your email address" required>
+                    <button type="submit">Subscribe</button>
+                </form>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2024 EduMadeEasy. All rights reserved.</p>
+        </div>
+    </footer>
+    <script>
+    function showMore() {
+        var hiddenCards = document.querySelectorAll('.ngo-card.hidden');
+        hiddenCards.forEach(function(card) {
+            card.classList.remove('hidden');
+        });
+        document.querySelector('.view-more-container').style.display = 'none'; // Hide the View More button
+    }
+</script>
+</body>
+</html>

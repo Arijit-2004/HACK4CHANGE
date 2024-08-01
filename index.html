@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduMadeEasy</title>
+    <link rel="stylesheet" href="static/style.css">
+    <link rel="stylesheet" href="../static/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">EduMadeEasy</div>
+            <ul>
+                <li><a href="scholarships.html">Scholarships</a></li>
+                <li><a href="internships.html">Internships</a></li>
+                 <li><a href="ngo.html">NGOs</a></li>
+                <li><a href="#contact-us"><i class="fas fa-envelope"></i> Contact Us</a></li>
+                <li><a href="login.html" id="openLoginRegister">Login/Register</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Login/Register Modal -->
+    <div id="loginRegisterModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div id="loginForm">
+                <h2>Login</h2>
+                <form>
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username" required>
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required>
+                    <button type="submit">Login</button>
+                </form>
+                <p>Don't have an account? <a href="#" id="switchToRegister">Register here</a></p>
+            </div>
+            <div id="registerForm" style="display: none;">
+                <h2>Register</h2>
+                <form>
+                    <label for="new-username">Username</label>
+                    <input type="text" id="new-username" name="new-username" required>
+                    <label for="new-password">Password</label>
+                    <input type="password" id="new-password" name="new-password" required>
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                    <button type="submit">Register</button>
+                </form>
+                <p>Already have an account? <a href="#" id="switchToLogin">Login here</a></p>
+            </div>
+        </div>
+    </div>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Empowering Youths To Build A Successful Future</h1>
+            <p>Connect with scholarships, educational NGOs, and internship opportunities.</p>
+            <div class="hero-buttons">
+                <a href="scholarships.html" class="btn">Find Scholarships</a>
+                <a href="internships.html" class="btn">Explore Internships</a>
+                <a href="#contact-us" class="btn"><i class="fas fa-envelope"></i> Contact Us</a>
+            </div>
+        </div>
+    </section>
+    
+    <section class="features" id="scholarships">
+        <div class="container">
+            <div class="feature">
+                <img src="./images/scholar.jpg" alt="Scholarships">
+                <h3>Scholarships</h3>
+                <p>Find the best scholarships tailored for you.</p>
+            </div>
+            <div class="feature">
+                <img src="./images/intern.png" alt="Internships">
+                <h3>Internships</h3>
+                <p>Explore internship opportunities from top companies and startups.</p>
+            </div>
+            <div class="feature">
+                <img src="./images/ngo.png" alt="Educational NGOs">
+                <h3>Educational NGOs</h3>
+                <p>Connect with NGOs that support your education.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="how-it-works" id="internships">
+        <div class="container">
+            <h2>How It Works</h2>
+            <div class="steps">
+                <div class="step">
+                    <img src="./images/register.png" alt="Register">
+                    <h3>Step 1</h3>
+                    <p>Register and create your profile.</p>
+                </div>
+                <div class="step">
+                    <img src="./images/search.png" alt="Search">
+                    <h3>Step 2</h3>
+                    <p>Search for scholarships, internships, or NGOs.</p>
+                </div>
+                <div class="step">
+                    <img src="./images/apply.png" alt="Apply">
+                    <h3>Step 3</h3>
+                    <p>Apply for the opportunities that suit you.</p>
+                </div>
+                <div class="step">
+                    <img src="./images/connect.png" alt="Connect">
+                    <h3>Step 4</h3>
+                    <p>Connect and take your career to the next level.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials" id="testimonials">
+        <div class="container">
+            <h2>Testimonials</h2>
+            <div class="testimonial-row">
+                <div class="testimonial-card">
+                    <img src="./images/s1.jpg" alt="Shreya Chatterjee">
+                    <div class="testimonial-content">
+                        <p>"EduMadeEasy has helped me find the perfect scholarship. I couldn't be more grateful!"</p>
+                        <h4>Shreya Chatterjee</h4>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <img src="./images/s2.jpg" alt="Ahana Gupta">
+                    <div class="testimonial-content">
+                        <p>"The internship opportunities listed here are top-notch. Highly recommend this platform."</p>
+                        <h4>Ahana Gupta</h4>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <img src="./images/s3.jpg" alt="Saurabh Kumar">
+                    <div class="testimonial-content">
+                        <p>"Connecting with NGOs through EduMadeEasy has been a game-changer for my education."</p>
+                        <h4>Saurabh Kumar</h4>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <img src="./images/s4.jpg" alt="Shrestha Aggarwal">
+                    <div class="testimonial-content">
+                        <p>"EduMadeEasy is a fantastic platform for students looking for educational opportunities."</p>
+                        <h4>Shrestha Aggarwal</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Us Section -->
+    <section class="contact-us" id="contact-us">
+        <div class="container">
+            <h2>Contact Us</h2>
+            <form id="contactForm" action="/submit-form" method="POST">
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="btn">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Contact Modal -->
+    <div id="contactModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Contact Us</h2>
+            <form>
+                <label for="contact-name">Name</label>
+                <input type="text" id="contact-name" name="contact-name" required>
+
+                <label for="contact-number">Contact Number</label>
+                <input type="tel" id="contact-number" name="contact-number" required>
+
+                <label for="contact-address">Address</label>
+                <input type="text" id="contact-address" name="contact-address" required>
+
+                <label for="contact-email">Email</label>
+                <input type="email" id="contact-email" name="contact-email" required>
+
+                <label for="contact-message">Message</label>
+                <textarea id="contact-message" name="contact-message" required></textarea>
+                
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section about">
+                <h3>About Us</h3>
+                <p>EduMadeEasy is dedicated to helping students find the right scholarships and internships to further their education and career. Our mission is to connect students with valuable opportunities to support their academic and professional growth.</p>
+            </div>
+            <div class="footer-section contact">
+                <h3>Contact Us</h3>
+                <p>Email: <a href="mailto:youremail@example.com">youremail@example.com</a></p>
+            </div>
+            <div class="footer-section social-media">
+                <h3>Follow Us</h3>
+                <a href="https://twitter.com/yourtwitter" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.linkedin.com/in/yourlinkedin/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="https://www.instagram.com/yourinstagram/" target="_blank"><i class="fab fa-instagram"></i></a>
+            </div>
+            <div class="footer-section newsletter">
+                <h3>Newsletter</h3>
+                <p>Subscribe to our newsletter to get the latest updates on scholarships, internships, and more.</p>
+                <form action="#">
+                    <input type="email" placeholder="Your email address" required>
+                    <button type="submit">Subscribe</button>
+                </form>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2024 EduMadeEasy. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Add the chat bot icon to the right side -->
+    <div class="container">
+        <div class="chatbox">
+            <div class="chatbox__support">
+                <div class="chatbox__header">
+                    <div class="chatbox__image--header">
+                        <img src="https://img.icons8.com/color/48/000000/circled-user-female-skin-type-5--v1.png" alt="image">
+                    </div>
+                    <div class="chatbox__content--header">
+                        <h4 class="chatbox__heading--header">Assitance Chat</h4>
+                        <p class="chatbox__description--header">Hello! How can I help you?</p>
+                    </div>
+                </div>
+                <div class="chatbox__messages">
+                    <div></div>
+                </div>
+                <div class="chatbox__footer">
+                    <input type="text" placeholder="Write a message...">
+                    <button class="chatbox__send--footer send__button">Enter</button>
+                </div>
+            </div>
+            <div class="chatbox__button">
+                <button><img src="./images/chatbot.jpg" /></button>
+            </div>
+        </div>
+    </div>
+    
+        <script src="/static/app.js"></script>
+
+
+    
+    
+    <script src="/static/script.js"></script>
+
+ 
+</body>
+</html>
+
+
+
+
+
